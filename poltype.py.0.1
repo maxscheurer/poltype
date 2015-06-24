@@ -534,7 +534,7 @@ def copyright ():
    Wu, J.C.; Chattree, G.; Ren, P.Y.; Automation of AMOEBA polarizable force field 
    parameterization for small molecules. Theor Chem Acc. (Accepted).
 
-                                  Version 1.1.3 April 2013
+                                  Version 1.1.4 June 2015
                           Copyright (c)  Johnny Wu and Pengyu Ren 2011
                                       All Rights Reserved
  ######################################################################################
