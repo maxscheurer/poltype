@@ -1,4 +1,4 @@
-Current version is 1.1.4 (June 20150
+Current version is 1.1.4 (June 20150)
 
 poltype.py.0.1: recommended version. Use MP2 for goemetry optimization; torsion scan also use HF/MP2 
 	#Please also use "--do-tor-qm-opt" option to paraemeterize the torsions using QM for optimization scan (default is off; using TINKER to optimize at each torsion value instead). TINKER analyze is then used to calcuate the torsional energy (restrained minimization is arguablly better here) with torsion parameter in question set to 0. The QM-MM is used to fit torsion parameters.
@@ -11,3 +11,9 @@ poltype.pr.org: cheaper version. Use HF for geometry optimization; HF/M06L for t
 	# " "--do-tor-qm-opt" is recommended even for quick estimate
 
 poltype.py.2013 has a bug: all OH/NH quadrupole moments are scaled by 0.60. This should be done to alchol and amine only (OH and NH connet to SP3 carbon). Instead it scales any OH/NH include aromatic ones.
+
+
+Change history:
+June 2015
+* HF to kcal unit conversion error (621 instead of 627) corrected 
+* ameobna_v2_new_head.prm updated to remove the opbendunit, the opbend force constants now 71.94x bigger than before (changed in valence.py). This is consistent with amoebapro2013.prm and amoeba09.prm.
