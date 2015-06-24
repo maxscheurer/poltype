@@ -98,7 +98,7 @@ superposeexe = "superpose.x"
 
 # Initialize constants, basis sets
 defopbendval = 0.20016677990819662
-Hartree2kcal_mol = 621.5095
+Hartree2kcal_mol = 627.5095
 optbasisset = "6-31G*"
 dmabasisset = "6-311G**"
 popbasisset = "6-31G*"

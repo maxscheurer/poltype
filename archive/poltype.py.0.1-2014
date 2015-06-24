@@ -2292,8 +2292,8 @@ def gen_valinfile (mol):
 
     for (opbkey, opbval) in opbhash.items():
         f.write('%s %.5f %d\n' % (opbkey, opbval[0], opbval[1]))
-    # this writes to *-valin.txt
     f.write("\n")
+
     rotbndprmlist = []
     for rotbnd in rotbndlist.values():
         for rotbndprm in rotbnd:

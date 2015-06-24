@@ -13,7 +13,7 @@ angle-quartic           0.000056
 angle-pentic            -0.0000007
 angle-sextic            0.000000022
 opbendtype              ALLINGER
-#opbendunit              0.02191418
+opbendunit              0.02191418
 opbend-cubic            -0.014
 opbend-quartic          0.000056
 opbend-pentic           -0.0000007

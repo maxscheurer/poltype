@@ -2460,11 +2460,11 @@ class Valence:
         if self.o_f == 5:
             for opbparm in sortedopbparmlist:
                 key=opbparm[0]
-                x.append('opbend %6d%6d%6d%6d%11.4f' % (key[0],key[1],key[2],key[3], opbparm[1]*71.94))
+                x.append('opbend %6d%6d%6d%6d%11.4f' % (key[0],key[1],key[2],key[3], opbparm[1]))
         else:
             for opbparm in sortedopbparmlist:
                 key=opbparm[0]
-                x.append('opbend %6d%6d%11.4f' % (key[1],key[0],opbparm[1]*71.94))
+                x.append('opbend %6d%6d%11.4f' % (key[1],key[0],opbparm[1]))
         return x
 
     def pitorguess(self,mol):
