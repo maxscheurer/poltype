@@ -472,7 +472,7 @@ class Valence:
                             #print "lol"
                         #addToOutString(key2)
         x = []
-        for v in dict.itervalues(d):
+        for v in iter(d.values()):
             x.append(v)
         return x
 
@@ -873,10 +873,10 @@ class Valence:
 #                        key2 = '#bond%10s%10.6f %s' % (key1string,v[skey][0],"error, parameter not found in amoeba parameters, resorted to tinker's analyze.x parameters")
                     d.update({key1string : key2})
         x = []
-        for v in dict.itervalues(d):
+        for v in iter(d.values()): 
             x.append(v)
-        sortedtuple = sorted(d.iteritems(),
-            key=lambda(k,v): (k.split()[0],k.split()[1]))
+        sortedtuple = sorted(iter(d.items()),
+            key=lambda k_v: (k_v[0].split()[0],k_v[0].split()[1]))
         x = [ t[1] for t in sortedtuple ]
         return x
 
@@ -1441,8 +1441,8 @@ class Valence:
                     key1string = '%d %d %d' % (key1[0], key1[1], key1[2])
                     d.update({key1string : key2})
         x = []
-        sortedtuple = sorted(d.iteritems(),
-            key=lambda(k,v): (k.split()[1],k.split()[0],k.split()[2]))
+        sortedtuple = sorted(iter(d.items()),
+            key=lambda k_v1: (k_v1[0].split()[1],k_v1[0].split()[0],k_v1[0].split()[2]))
         x = [ t[1] for t in sortedtuple ]
         return x
 
@@ -1860,8 +1860,8 @@ class Valence:
                     if(v[skey][0] == 0 and v[skey][1] == 0):
                         del d[key1string]
         x = []
-        sortedtuple = sorted(d.iteritems(),
-            key=lambda(k,v): (k.split()[1],k.split()[0],k.split()[2]))
+        sortedtuple = sorted(iter(d.items()),
+            key=lambda k_v2: (k_v2[0].split()[1],k_v2[0].split()[0],k_v2[0].split()[2]))
         x = [ t[1] for t in sortedtuple ]
         if self.o_f == 4:
             x = self.change_format(mol,x)
@@ -2436,12 +2436,12 @@ class Valence:
                     d.update({key1string : key2})
                     zeroed = False
         x = []
-        for v in dict.itervalues(d):
+        for v in iter(d.values()): 
             x.append(v)
             if(float(v.split()[5]) == 0.0 and float(v.split()[8]) == 0.0 and float(v.split()[11]) == 0.0): self.missed_torsions.append([int(v.split()[1]),int(v.split()[2]),int(v.split()[3]),int(v.split()[4])])
-        sortedtuple = sorted(d.iteritems(),
-            key=lambda(k,v): (k.split()[1],k.split()[2],
-                                k.split()[0],k.split()[3]))
+        sortedtuple = sorted(iter(d.items()),
+            key=lambda k_v3: (k_v3[0].split()[1],k_v3[0].split()[2],
+                                k_v3[0].split()[0],k_v3[0].split()[3]))
         x = [ t[1] for t in sortedtuple ]
         return x
 
@@ -2457,7 +2457,7 @@ class Valence:
             if ((covlkey not in clsopbvallist) or opbval):
                 clsopbvallist[covlkey] = opbval[0]
         sortedopbparmlist = sorted([(key, value) for
-            (key,value) in clsopbvallist.items()])
+            (key,value) in list(clsopbvallist.items())])
         if self.o_f == 5:
             for opbparm in sortedopbparmlist:
                 key=opbparm[0]
@@ -2490,10 +2490,10 @@ class Valence:
                     key2 = 'pitors%7d%6d%11.4f' % (key1[0], key1[1], v[skey][2])
                     d.update({key1string : key2})
         x = []
-        for v in dict.itervalues(d):
+        for v in iter(d.values()): 
             x.append(v)
-        sortedtuple = sorted(d.iteritems(),
-            key=lambda(k,v): (k.split()[0],k.split()[1]))
+        sortedtuple = sorted(iter(d.items()),
+            key=lambda k_v4: (k_v4[0].split()[0],k_v4[0].split()[1]))
         x = [ t[1] for t in sortedtuple ]
         return x
 
@@ -2527,7 +2527,7 @@ class Valence:
                 else:
                     sbvl[0] = sbv
                 new_sbd.update({sb2 : sbvl[:]})
-        for k,v in new_sbd.iteritems():
+        for k,v in new_sbd.items():
             new_sbs.append('strbnd%7d%11.4f%10.4f%10.4f' % (k,v[0],v[1],v[2]))
         return new_sbs[:]
 
