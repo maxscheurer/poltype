@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 ##################################################################
 #
@@ -230,8 +230,8 @@ def parse_options(argv):
     global do_tor_qm_opt
     try:
         opts, xargs = getopt.getopt(argv[1:],'hqn:m:M:a:s:p:d:u:',["help","qmonly","optbasisset=","dmabasisset=","popbasisset=","espbasisset=","m06lbasisset=","optlog=","dmalog=","esplog=","dmafck=","espfck=","numproc=","maxmem=","maxdisk=","atmidx=","structure=","prefix=","gdmaout=","gbindir=","qm-scratch-dir=","omit-espfit","omit-torsion","test-tor-key=","uniqidx","tinker4format","omit-torsion2","do-tor-qm-opt"])
-    except getopt.GetoptError, err:
-        print str(err)
+    except (getopt.GetoptError, err):
+        print(str(err))
         usage()
         sys.exit(2)
 
